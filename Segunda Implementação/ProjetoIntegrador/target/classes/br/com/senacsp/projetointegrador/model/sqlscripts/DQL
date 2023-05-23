@@ -1,0 +1,14 @@
+use CRUD;
+
+SELECT * FROM company;
+SELECT * FROM address;
+SELECT * FROM company_address;
+
+/* Todas Informações */
+SELECT company.id as 'Company id', employee.id as 'Employee id', company.name as 'Company name', address.address as 'Company Address', address.CEP "Company CEP", company_address.number as 'Company Number', company_address.complement as 'Company Complement', employee.name as 'Employee', employee.email as 'E-Mail', employee.RG as 'Employee RG', employee.createdAt as 'Employee Created At', employee.updatedAt as 'Employee Updated At' FROM company_address INNER JOIN company ON company.id = company_address.company_id INNER JOIN address ON company_address.address_id = address.id INNER JOIN employee ON company.id = employee.company_id ORDER BY employee.name;
+
+/* Funcionarios da empresa x */
+SELECT  employee.id as 'Employee id', company.name as 'Company name', employee.name as 'Employee name', employee.RG as 'Employee RG' FROM company INNER JOIN employee ON employee.company_id = company.id WHERE company.id = '7333ba66-f994-11ed-89c8-ec63d7ea86d4';
+
+/* Inner join de funcionario e empresa */
+SELECT employee.id as 'Employee id', employee.company_id as 'Company id', company.name as 'Company Name', company.CNPJ as 'Company CNPJ', employee.name as 'Employee Name', employee.email as 'Employee E-Mail', employee.RGF as 'Employee RGF', employee.RG as 'Employee RG', employee.CPF as 'Employee CPF', employee.createdAt as 'Employee Created at', employee.updatedAt as 'Employee Updated at' FROM employee INNER JOIN company ON employee.company_id = company.id ORDER BY company.name;

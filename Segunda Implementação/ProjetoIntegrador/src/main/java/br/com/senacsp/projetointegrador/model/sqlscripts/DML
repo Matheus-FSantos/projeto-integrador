@@ -1,0 +1,14 @@
+use CRUD;
+
+INSERT INTO company(id, name, CNPJ, createdAt, updatedAt) VALUES (UUID(), 'Tech Sync', '98733173000113', now(), now());
+INSERT INTO company(id, name, CNPJ, createdAt, updatedAt) VALUES (UUID(), 'Microsoft', '04712500000107', now(), now());
+
+INSERT INTO address(id, address, state, uf, CEP, createdAt, updatedAt) VALUES (UUID(), 'Rua Júlio Fernandes', 'Taboão da Serra', 'SP', '06773170', now(), now());
+INSERT INTO address(id, address, state, uf, CEP, createdAt, updatedAt) VALUES (UUID(), 'Av. Presidente Jucelino Kubitscheck', 'São Paulo', 'SP', '04543907', now(), now());
+
+INSERT INTO company_address(id, address_id, company_id, complement, number) VALUES (UUID(), '750b4e29-f994-11ed-89c8-ec63d7ea86d4', '7333ba66-f994-11ed-89c8-ec63d7ea86d4', 'Primeira Torre, Lado sul', '107A');
+INSERT INTO company_address(id, address_id, company_id, complement, number) VALUES (UUID(), '8e0117a1-f9a3-11ed-89c8-ec63d7ea86d4', '4cb56315-f9a3-11ed-89c8-ec63d7ea86d4', '16º Andar', '405B');
+
+INSERT INTO employee(id, company_id, name, email, RGF, RG, CPF, createdAt, updatedAt)  VALUES (UUID(), '7333ba66-f994-11ed-89c8-ec63d7ea86d4', 'Matheus Ferreira Santos', 'matheus.fs.contato@gmail.com', '111111', '353747312', '87794072000', now(), now());
+INSERT INTO employee(id, company_id, name, email, RGF, RG, CPF, createdAt, updatedAt) VALUES(UUID(), '7333ba66-f994-11ed-89c8-ec63d7ea86d4', 'João Gabriel', 'joao@gmail.com', '222222', '393977006', '22324564311', now(), now());
+INSERT INTO employee(id, company_id, name, email, RGF, RG, CPF, createdAt, updatedAt) VALUES(UUID(), '7333ba66-f994-11ed-89c8-ec63d7ea86d4', 'Lucas Ryu Muraoka', 'lucas@gmail.com', '333333', '402947927', '70445872080', now(), now());
