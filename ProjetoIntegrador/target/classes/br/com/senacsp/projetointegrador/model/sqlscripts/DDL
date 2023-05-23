@@ -1,0 +1,45 @@
+create table employee (
+	id VARCHAR(36) PRIMARY KEY,
+    company_id VARCHAR(36),
+    name VARCHAR(40),
+    email VARCHAR(60) UNIQUE,
+    RGF VARCHAR(6) UNIQUE,
+    RG VARCHAR(7) UNIQUE,
+    CPF VARCHAR(11) UNIQUE,
+    
+    createdAt DATETIME,
+    updatedAt DATETIME,
+    
+    FOREIGN KEY (company_id) REFERENCES company(id)
+);
+
+create table company(
+	id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(60) UNIQUE,
+    CNPJ VARCHAR(14) UNIQUE,
+	
+    createdAt DATETIME,
+    updatedAt DATETIME
+);
+
+create table address(
+	id VARCHAR(36) PRIMARY KEY,
+    address VARCHAR(60),
+    state VARCHAR(45),
+    uf VARCHAR(2),
+    CEP VARCHAR(8),
+    
+    createdAt DATETIME,
+    updatedAt DATETIME
+);
+
+create table company_address(
+	id VARCHAR(36) PRIMARY KEY,
+    address_id VARCHAR(36),
+    company_id VARCHAR(36),
+    complement VARCHAR(60),
+    number VARCHAR(20),
+    
+    FOREIGN KEY (address_id) REFERENCES address(id),
+	FOREIGN KEY (company_id) REFERENCES company(id)
+);

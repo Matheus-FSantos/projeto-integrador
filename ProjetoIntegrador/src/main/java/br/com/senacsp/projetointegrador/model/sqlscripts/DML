@@ -1,0 +1,9 @@
+INSERT INTO company(id, name, CNPJ, createdAt, updatedAt) VALUES (UUID(), 'Nike USA', '98733173000113', now(), now());
+
+INSERT INTO address(id, address, state, uf, CEP, createdAt, updatedAt) VALUES (UUID(), "Rua Paolo Porpora", "São Paulo", "SP", "02317140", now(), now());
+
+INSERT INTO company_address(id, address_id, company_id, complement, number) VALUES (UUID(), "e461cff2-f96e-11ed-a92e-7c0507947133", "8d63f677-f96c-11ed-a92e-7c0507947133", "Apartamento do Bloco B", "107A");
+
+INSERT INTO employee(id, company_id, name, email, RGF, RG, CPF, createdAt, updatedAt)  VALUES (UUID(), '8d63f677-f96c-11ed-a92e-7c0507947133', 'Matheus Ferreira Santos', 'matheus.fs.contato@gmail.com', '111111', '1212321', '33214564311', now(), now());
+INSERT INTO employee(id, company_id, name, email, RGF, RG, CPF, createdAt, updatedAt) VALUES(UUID(), '8d63f677-f96c-11ed-a92e-7c0507947133', 'João Gabriel', 'joao@gmail.com', '222222', '2121213', '22324564311', now(), now());
+INSERT INTO employee(id, company_id, name, email, RGF, RG, CPF, createdAt, updatedAt) VALUES(UUID(), '8d63f677-f96c-11ed-a92e-7c0507947133', 'Lucas Ryu Muraoka', 'lucas@gmail.com', '333333', '3940539', '70445872080', now(), now());
